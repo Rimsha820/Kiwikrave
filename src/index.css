@@ -1,0 +1,26 @@
+:root {
+  --brand-bg: #f5eee9; /* light beige */
+  --brand-primary: #3EE27A; /* primary green */
+  --brand-on-primary: #ffffff; /* text on primary */
+  --brand-accent: #1da955; /* darker green accent */
+  --brand-text: #1f2937; /* default body text */
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+}
+
+body.theme-indigo {
+  background: var(--brand-bg);
+  color: var(--brand-text);
+}
+
+.btn-primary { background: var(--brand-primary); color: #ffffff; }
+

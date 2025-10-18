@@ -1,0 +1,54 @@
+/* Advantages */
+.advantages .adv-inner {
+    text-align: center;
+}
+
+.advantages .adv-intro {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #6b7280;
+}
+
+.advantages .section-title {
+    font-size: 40px;
+    margin: 0 0 0.5rem 0;
+}
+
+.advantages .adv-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.advantages .adv-item {
+    text-align: center;
+}
+
+.advantages .adv-img {
+    height: 96px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.advantages .adv-img img {
+    height: 96px;
+    width: auto;
+    display: block;
+}
+
+.advantages .adv-copy h3 {
+    font-size: 28px;
+    margin: 0;
+}
+
+.advantages .adv-copy p {
+    font-size: 18px;
+    color: #6b7280;
+    margin: 0.25rem 0 0;
+}
+
+.advantages.home-section {
+    min-height: 60vh;
+}

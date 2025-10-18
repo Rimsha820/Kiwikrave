@@ -1,0 +1,28 @@
+/* Download */
+.download .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.download .left-img {
+    height: 320px;
+    background: #e5e7eb;
+    border-radius: 0.75rem;
+}
+
+.download .badges {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    align-items: center;
+}
+
+.download .badges .store-badge img {
+    height: 42px;
+}
+
+.download.home-section {
+    min-height: 50vh;
+}
