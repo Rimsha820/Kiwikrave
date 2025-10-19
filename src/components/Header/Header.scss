@@ -5,7 +5,6 @@
   right: 0;
   z-index: 1000;
   background: #ffffff;
-  /* requested translucent white */
   color: #000000;
   border-bottom: 1px solid transparent;
   backdrop-filter: none;
@@ -108,8 +107,21 @@
     }
   }
 
+  .kk-linkbtn {
+    background: transparent;
+    border: none;
+    color: #000000;
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+  }
+
+  .kk-linkbtn:hover {
+    color: var(--brand-primary);
+  }
+
   .kk-nav-item.is-active a {
-    color: #111111; // darker black for active state
+    color: #111111;
   }
 
   .kk-dropdown {

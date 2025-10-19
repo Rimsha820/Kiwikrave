@@ -87,6 +87,12 @@
     min-height: 100vh;
 }
 
+@media (min-width: 1200px) {
+    .hero.home-section {
+        margin-top: 2rem;
+    }
+}
+
 @keyframes heroRise {
     from {
         opacity: 0;
