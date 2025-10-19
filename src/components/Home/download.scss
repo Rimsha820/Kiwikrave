@@ -1,15 +1,21 @@
 /* Download */
+.download {
+    background: #ffffff;
+    height: 700px;
+}
 .download .two-col {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+    gap: 0.75rem; /* reduce gap between image and text */
     align-items: center;
 }
 
-.download .left-img {
-    height: 320px;
-    background: #e5e7eb;
-    border-radius: 0.75rem;
+.download .app-img {
+    display: block;
+    height: auto;
+    width: auto;
+    max-width: 1200px;
+    height: 700px;
 }
 
 .download .badges {
@@ -19,10 +25,18 @@
     align-items: center;
 }
 
+.download .badges .store-badge {
+    display: inline-flex;
+    align-items: center;
+    line-height: 0;
+}
+
 .download .badges .store-badge img {
-    height: 42px;
+    height: 44px;
+    width: auto;
+    display: block;
 }
 
 .download.home-section {
-    min-height: 50vh;
+    min-height: 90vh;
 }

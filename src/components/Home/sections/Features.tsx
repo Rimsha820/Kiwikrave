@@ -1,11 +1,11 @@
 import type { JSX } from 'react';
 import '../features.scss';
 import { useEffect, useState } from 'react';
-import feat1 from '../../../assets/stater.jpg';
-import feat2 from '../../../assets/pack.jpg';
-import feat3 from '../../../assets/stir.jpg';
-import feat4 from '../../../assets/pastaas.jpg';
-import feat5 from '../../../assets/pasta.jpg';
+import feat1 from '../../../assets/picked.png';
+import feat2 from '../../../assets/pickup.png';
+import feat3 from '../../../assets/uncooked.png';
+import feat4 from '../../../assets/veges.png';
+import feat5 from '../../../assets/food2.png';
 
 const items = [
   {
@@ -51,10 +51,7 @@ export default function Features(): JSX.Element {
   }, []);
 
   return (
-    <section
-      className="home-section features"
-      style={{ backgroundImage: `url(${items[index].img})` }}
-    >
+    <section className="home-section features">
       <div className="section-inner features-inner">
         {/* LEFT SIDE: TEXT */}
         <div className="rush-copy">
@@ -73,7 +70,17 @@ export default function Features(): JSX.Element {
           </div>
         </div>
 
-        {/* Background image now applied to the section; visual block removed */}
+        {/* RIGHT SIDE: IMAGE */}
+        <div className="rush-visual">
+          {items.map((it, i) => (
+            <div
+              key={it.title}
+              className={`swap-img${i === index ? ' is-active' : ''}`}
+              aria-label={it.imgAlt}
+              style={{ backgroundImage: `url(${it.img})` }}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

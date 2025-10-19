@@ -1,0 +1,89 @@
+.contact-hero .merchant-hero__overlay .container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  margin-left: 5rem;
+  margin-right: auto;
+}
+
+.contact-hero .hero-copy {
+  color: #ffffff;
+  margin-top: 10rem;
+}
+
+.contact-form-card {
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  backdrop-filter: blur(4px);
+  max-height: 520px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem; 
+  overflow: hidden; 
+}
+
+.contact-form-card h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.25rem;
+  color: #0b1220;
+}
+
+.contact-form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.contact-form-scroll {
+  overflow-y: auto;
+  overflow-x: hidden; 
+  padding-right: 0.25rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  box-sizing: border-box; 
+  display: block;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px rgba(62, 226, 122, 0.25);
+}
+
+.contact-form .btn-submit {
+  margin-top: 0.5rem;
+  width: 100%;
+  background: var(--brand-primary);
+  color: #0b1220;
+  border: none;
+  border-radius: 999px;
+  padding: 0.85rem 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  position: sticky; 
+  bottom: 0;
+  z-index: 1;
+}
+
+.contact-form .btn-submit:hover {
+  filter: brightness(0.95);
+}
+
+@media (max-width: 900px) {
+  .contact-hero .merchant-hero__overlay .container {
+    grid-template-columns: 1fr;
+    margin-left: 1rem;
+  }
+  .contact-form-card {
+    margin-left: 0; 
+  }
+}
+
+

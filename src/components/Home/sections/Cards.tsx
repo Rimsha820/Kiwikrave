@@ -6,10 +6,16 @@ export default function Cards(): JSX.Element {
     <section className="home-section cards">
       <div className="section-inner">
         <div className="card-row">
-          <div className="simple-card">
+          <div
+            className="simple-card"
+            role="button"
+            tabIndex={0}
+            onClick={() => { window.location.hash = '#merchant' }}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.location.hash = '#merchant' } }}
+          >
             <div className="card-icon"><i className="fa-solid fa-store"></i></div>
             <div className="card-content">
-              <h3>Partner with Kiwikrave</h3>
+              <h3>Merchant with Kiwikrave</h3>
               <p>Kiwikrave builds the platform for  you to connect <br /> with your customers.</p>
               <div className="card-arrow" aria-hidden="true"><i className="fa-solid fa-arrow-right-long"></i></div>
             </div>

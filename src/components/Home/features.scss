@@ -1,12 +1,9 @@
-.features {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
+.features { background: #ffffff; }
+.features .section-inner { min-height: 0; }
 
 .features .features-inner {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
     align-items: center;
 }
@@ -22,6 +19,25 @@
     color: #6b7280;
     max-width: 460px;
     font-size: 20px;
+}
+
+.features .rush-visual {
+    position: relative;
+    height: 400px;
+}
+
+.features .rush-visual .swap-img {
+    position: absolute;
+    inset: 0;
+    border-radius: 0.75rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+.features .rush-visual .swap-img.is-active {
+    display: block;
 }
 
 .features .swap-dots {
