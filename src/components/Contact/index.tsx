@@ -114,7 +114,7 @@ export default function Contact({ standalone = false }: { standalone?: boolean }
         <div className="merchant-hero__overlay">
           <div className="container">
             <div className="hero-copy">
-              <h1>Partner With Kiwikrave</h1>
+              <h1>Merchant With Kiwikrave</h1>
               <p>Kiwikrave builds the platform for you to connect with your customers. Eliminating the hassle of taking phone call orders, our smart platform helps increase efficiency. Partners are also able to view their order statistics, in order to improve operations.</p>
             </div>
             <div className="contact-form-card">

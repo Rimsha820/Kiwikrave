@@ -1,8 +1,9 @@
 import type { JSX } from 'react';
 import { useEffect, useRef, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './Header.scss';
 
-const NAV_ITEMS = ['Merchant', 'Courier', 'Career'];
+const NAV_ITEMS = ['Merchant'];
 
 const LANGUAGE_OPTIONS = [
   { label: 'English', value: 'en' },
@@ -17,7 +18,6 @@ const COUNTRY_OPTIONS = [
 ];
 
 type HeaderProps = {
-  onNavigate: (name: string) => void;
   active?: string;
   language?: string;
   country?: string;
@@ -25,7 +25,8 @@ type HeaderProps = {
   onChangeCountry?: (value: string) => void;
 };
 
-export default function Header({ onNavigate, active, language = 'en', country = 'us', onChangeLanguage, onChangeCountry }: HeaderProps): JSX.Element {
+export default function Header({ active, language = 'en', country = 'us', onChangeLanguage, onChangeCountry }: HeaderProps): JSX.Element {
+  const navigate = useNavigate();
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [isCountryOpen, setIsCountryOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -59,7 +60,7 @@ export default function Header({ onNavigate, active, language = 'en', country = 
   return (
     <header className={`kk-header${isScrolled ? ' is-scrolled' : ''}`}>
       <nav className="kk-nav">
-        <a className="kk-logo" href="/" onClick={(e) => { e.preventDefault(); onNavigate('Home'); }}>
+        <Link className="kk-logo" to="/">
           <span className="kk-logo-mark" aria-label="KiwiKrave food logo">
             <i className="fa-solid fa-utensils" aria-hidden="true"></i>
           </span>
@@ -67,7 +68,7 @@ export default function Header({ onNavigate, active, language = 'en', country = 
             <span className="kk-logo-word">KiwiKrave</span>
             <span className="kk-logo-sub">Delivery</span>
           </span>
-        </a>
+        </Link>
         <button
           className="kk-burger"
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
@@ -83,7 +84,7 @@ export default function Header({ onNavigate, active, language = 'en', country = 
         <ul className={`kk-nav-list${isMenuOpen ? ' is-open' : ''}`}>
           {NAV_ITEMS.map((name) => (
             <li key={name} className={`kk-nav-item${active === name ? ' is-active' : ''}`}>
-              <a href="#" onClick={(e) => { e.preventDefault(); onNavigate(name); }}>{name}</a>
+              <button className="kk-linkbtn" onClick={() => navigate(`/${name.toLowerCase()}`)}>{name}</button>
             </li>
           ))}
           <li className={`kk-nav-item kk-dropdown${isLangOpen ? ' is-open' : ''}`} ref={langRef}>

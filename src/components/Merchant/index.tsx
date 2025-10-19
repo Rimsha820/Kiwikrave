@@ -1,4 +1,5 @@
 import type { JSX } from 'react';
+import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import t1 from '../../assets/per1.jpg';
 import t2 from '../../assets/meet.jpg';
@@ -110,7 +111,7 @@ export default function Merchant(): JSX.Element {
           <div className="container">
             <h1>Merchant with Kiwikrave</h1>
             <p>Kiwikrave builds the platform for you to connect with your customers. Our smart platform helps increase efficiency and lets partners view their order statistics to improve operations.</p>
-            <a href="/#contact" target="_blank" rel="noopener noreferrer" className="btn btn-pill btn-teal"><i className="fa-solid fa-user-plus"></i> Join now</a>
+            <Link to="/contact" target="_blank" rel="noopener noreferrer" className="btn btn-pill btn-teal"><i className="fa-solid fa-user-plus"></i> Join now</Link>
           </div>
         </div>
       </section>
@@ -218,7 +219,7 @@ export default function Merchant(): JSX.Element {
             </div>
           </div>
           <div className="steps-cta">
-            <a className="btn btn-pill btn-teal" href="/#contact" target="_blank" rel="noopener noreferrer"><i className="fa-solid fa-user-plus"></i> Join now</a>
+            <Link className="btn btn-pill btn-teal" to="/contact" target="_blank" rel="noopener noreferrer"><i className="fa-solid fa-user-plus"></i> Join now</Link>
           </div>
         </div>
       </section>
@@ -229,7 +230,7 @@ export default function Merchant(): JSX.Element {
           <h2>Advertisement for investment</h2>
           <p className="invest-sub">Use our big platform to accurately locate your customer base. Our advertising is the most <br />direct and effective way to increase brand awareness.</p>
           <div className="invest-cta center">
-            <a className="btn btn-pill btn-teal" href="/#contact" target="_blank" rel="noopener noreferrer"><i className="fa-solid fa-clipboard-list"></i> Contact Now</a>
+            <Link className="btn btn-pill btn-teal" to="/contact" target="_blank" rel="noopener noreferrer"><i className="fa-solid fa-clipboard-list"></i> Contact Now</Link>
             <a className="btn btn-outline" href="#"><i className="fa-solid fa-download"></i> Media Kit</a>
           </div>
         </div>
