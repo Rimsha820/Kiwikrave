@@ -42,44 +42,54 @@ const items = [
 
 export default function Features(): JSX.Element {
   const [index, setIndex] = useState(0);
+  const [prevIndex, setPrevIndex] = useState<number | null>(null);
 
   useEffect(() => {
     const id = setInterval(() => {
-      setIndex((prev) => (prev + 1) % items.length);
+      setIndex((prev) => {
+        setPrevIndex(prev);
+        return (prev + 1) % items.length;
+      });
     }, 2500);
     return () => clearInterval(id);
   }, []);
 
+  const goTo = (i: number) => {
+    setPrevIndex(index);
+    setIndex(i);
+  };
+
   return (
     <section className="home-section features">
-      <div className="section-inner features-inner">
-        {/* LEFT SIDE: TEXT */}
-        <div className="rush-copy">
-          <h2 className="offer-title">{items[index].title}</h2>
-          <p className="rush-text">{items[index].text}</p>
-
-          <div className="swap-dots">
-            {items.map((_, i) => (
-              <button
-                key={i}
-                aria-label={`Go to ${i + 1}`}
-                className={i === index ? 'is-active' : ''}
-                onClick={() => setIndex(i)}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* RIGHT SIDE: IMAGE */}
-        <div className="rush-visual">
-          {items.map((it, i) => (
-            <div
-              key={it.title}
-              className={`swap-img${i === index ? ' is-active' : ''}`}
-              aria-label={it.imgAlt}
-              style={{ backgroundImage: `url(${it.img})` }}
-            />
-          ))}
+      <div className="section-inner">
+        <div className="features-slider">
+          {items.map((it, i) => {
+            const isActive = i === index;
+            const isExiting = i === prevIndex;
+            return (
+              <div key={it.title} className={`feature-slide${isActive ? ' is-active' : ''}${isExiting ? ' is-exiting' : ''}`}>
+                <div className="features-inner">
+                  <div className="rush-copy">
+                    <h2 className="offer-title">{it.title}</h2>
+                    <p className="rush-text">{it.text}</p>
+                    <div className="swap-dots">
+                      {items.map((_, di) => (
+                        <button
+                          key={di}
+                          aria-label={`Go to ${di + 1}`}
+                          className={di === index ? 'is-active' : ''}
+                          onClick={() => goTo(di)}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <div className="rush-visual">
+                    <div className="visual-img" aria-label={it.imgAlt} style={{ backgroundImage: `url(${it.img})` }} />
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

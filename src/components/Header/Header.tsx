@@ -55,7 +55,10 @@ export default function Header({ onNavigate, active, language = 'en', country = 
           <span className="kk-logo-mark" aria-label="KiwiKrave food logo">
             <i className="fa-solid fa-utensils" aria-hidden="true"></i>
           </span>
-          KiwiKrave
+          <span className="kk-logo-text">
+            <span className="kk-logo-word">KiwiKrave</span>
+            <span className="kk-logo-sub">Delivery</span>
+          </span>
         </a>
         <ul className="kk-nav-list">
           {NAV_ITEMS.map((name) => (

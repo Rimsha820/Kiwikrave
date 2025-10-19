@@ -28,7 +28,7 @@
 }
 
 .merchant-hero .container {
-  margin-left: 5rem;
+  margin-left: 8rem;
   margin-right: auto;
   text-align: left;
 }
@@ -45,6 +45,10 @@
   max-width: 640px;
   font-size: 1.2rem;
   text-align: left;
+}
+
+@media (max-width: 900px) {
+  .merchant-hero .container { margin-left: 1.25rem; }
 }
 
 .btn-pill {
@@ -68,10 +72,10 @@
   border-radius: 0.5rem;
 }
 
-/* Benefits */
 .merchant-benefits {
   background: #ffffff;
 }
+
 .benefits-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -90,11 +94,18 @@
   color: var(--brand-primary);
 }
 
-.benefit-item h3 { margin: 0; font-size: 1.4rem; }
+.benefit-item h3 {
+  margin: 0;
+  font-size: 1.4rem;
+}
 
-.benefit-item p { color: #6b7280; font-size: 1.05rem; line-height: 1.7; max-width: 70ch; }
+.benefit-item p {
+  color: #6b7280;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 70ch;
+}
 
-/* Stats */
 .merchant-stats {
   background: var(--brand-primary);
   color: var(--brand-on-primary);
@@ -112,13 +123,19 @@
   font-size: 2.6rem;
 }
 
-.stat .label { font-size: 1.5rem; }
-.stat .sublabel {opacity: 0.8; font-size: 1.05rem; }
+.stat .label {
+  font-size: 1.5rem;
+}
 
-/* Testimonial */
+.stat .sublabel {
+  opacity: 0.8;
+  font-size: 1.05rem;
+}
+
 .testimonial-grid {
   display: grid;
-  grid-template-columns: 3fr 2fr; /* slightly wider image */
+  grid-template-columns: 3fr 2fr;
+  /* slightly wider image */
   gap: 1.5rem;
   align-items: center;
 }
@@ -127,9 +144,14 @@
   color: #374151;
   font-size: 1.2rem;
   line-height: 1.7;
-  max-width: 560px; /* wrap to ~4–5 lines */
+  max-width: 560px;
+  /* wrap to ~4–5 lines */
 }
-.quote p i { color: var(--brand-primary); margin-right: 0.5rem; }
+
+.quote p i {
+  color: var(--brand-primary);
+  margin-right: 0.5rem;
+}
 
 .quote .author {
   margin-top: 1rem;
@@ -138,7 +160,8 @@
 
 .photo {
   position: relative;
-  height: 420px; /* taller image */
+  height: 420px;
+  /* taller image */
   background: #e5e7eb;
   border-radius: 0.5rem;
   overflow: hidden;
@@ -157,14 +180,29 @@
   display: block;
 }
 
-.quote-dots { display: flex; gap: 0.5rem; margin-top: 0.75rem; }
-.quote-dots button { width: 30px; height: 9px; border-radius: 999px; border: 2px solid rgb(126, 125, 125); background: #ffffff; cursor: pointer; }
-.quote-dots button.is-active { background: var(--brand-primary); }
+.quote-dots {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
 
-/* Steps */
+.quote-dots button {
+  width: 30px;
+  height: 9px;
+  border-radius: 999px;
+  border: 2px solid rgb(126, 125, 125);
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.quote-dots button.is-active {
+  background: var(--brand-primary);
+}
+
 .merchant-steps {
   background: #ffffff;
 }
+
 .merchant-steps h2 {
   text-align: center;
   font-size: 2.5rem;
@@ -208,7 +246,6 @@
   text-align: center;
 }
 
-/* Invest */
 .merchant-invest {
   background: #f9fafb;
 }
@@ -239,14 +276,11 @@
   justify-content: center;
 }
 
-/* Larger investment headline */
 .merchant-invest h2 {
   font-size: 2.4rem;
 }
 
-/* Contact page footer separation moved to FooterBottom.scss */
 
-/* Buttons sizing and icons support */
 .btn-outline {
   border: 2px solid #0b1220;
   color: #0b1220;
@@ -267,9 +301,13 @@
   font-size: 1rem;
 }
 
-/* Ensure Contact Now uses white text and icon in invest section */
-.merchant-invest .btn-teal { color: #ffffff; }
-.merchant-invest .btn-teal i { color: #ffffff; }
+.merchant-invest .btn-teal {
+  color: #ffffff;
+}
+
+.merchant-invest .btn-teal i {
+  color: #ffffff;
+}
 
 .logos-row {
   display: grid;

@@ -6,8 +6,8 @@ export default function Download(): JSX.Element {
   return (
     <section className="home-section download">
       <div className="section-inner two-col">
-        <img className="app-img" src={appImg} alt="App preview" />
-        <div className="right-copy">
+        <img className="app-img from-left" src={appImg} alt="App preview" />
+        <div className="right-copy from-right">
           <h1 className="section-title">Download Our App</h1>
           <p>Life can be complicated but ordering food doesn't have to be. New users enjoy welcoming coupons set - Download now!</p>
           <div className="badges">

@@ -1,8 +1,11 @@
 .kk-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
-  background: hsla(0, 0%, 100%, 0.6); /* requested translucent white */
+  background: #ffffff;
+  /* requested translucent white */
   color: #000000;
   border-bottom: 1px solid transparent;
   backdrop-filter: none;
@@ -13,7 +16,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.25rem 1rem; /* increase header height */
+    padding: 1.25rem 1rem;
     gap: 1rem;
   }
 
@@ -23,19 +26,43 @@
     color: #000000;
     text-decoration: none;
     display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
+    align-items: baseline; /* align icon with main text, not the whole block */
+    gap: 0.6rem;
   }
 
   .kk-logo-mark {
     display: inline-flex;
-    width: 28px;
-    height: 28px;
+    width: 36px;
+    height: 36px;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     background: var(--brand-primary);
     color: #ffffff;
+    align-self: baseline; /* follow text baseline */
+    transform: translateY(2px); /* nudge to better align with main text */
+  }
+
+  .kk-logo-text {
+    display: inline-flex;
+    flex-direction: column; /* stack sub text under brand */
+    align-items: flex-start;
+    gap: 2px;
+    line-height: 1;
+    
+  }
+
+  .kk-logo-word {
+    font-size: 25px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .kk-logo-sub {
+    font-size: 12px;
+    font-style: italic;
+    opacity: 0.8;
+    margin-left: 75px;
   }
 
   .kk-nav-list {
@@ -92,7 +119,9 @@
     }
   }
 
-  .kk-drop-label { font-weight: 700; }
+  .kk-drop-label {
+    font-weight: 700;
+  }
 
   .kk-dropdown-menu {
     position: absolute;
@@ -108,7 +137,9 @@
     z-index: 10;
   }
 
-  .kk-dropdown.is-open .kk-dropdown-menu { display: block; }
+  .kk-dropdown.is-open .kk-dropdown-menu {
+    display: block;
+  }
 
   .kk-dropdown-menu li {
     list-style: none;
@@ -129,9 +160,8 @@
 }
 
 .kk-header.is-scrolled {
-  background: #ffffff; /* solid white while scrolling */
+  background: #ffffff;
+  /* solid white while scrolling */
   border-bottom-color: rgba(0, 0, 0, 0.1);
   backdrop-filter: none;
 }
-
-

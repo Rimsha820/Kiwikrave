@@ -1,5 +1,8 @@
 .features { background: #ffffff; }
-.features .section-inner { min-height: 0; }
+
+.features .section-inner {
+    min-height: 0;
+}
 
 .features .features-inner {
     display: grid;
@@ -21,29 +24,90 @@
     font-size: 20px;
 }
 
+.features .features-slider {
+    position: relative;
+    overflow: hidden;
+    min-height: 580px;
+}
+
+.features .feature-slide {
+    position: absolute;
+    inset: 0;
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 600ms ease-in-out, opacity 600ms ease-in-out;
+    will-change: transform, opacity;
+}
+
+.features .feature-slide.is-active {
+    transform: translateX(0%);
+    opacity: 1;
+    visibility: visible;
+}
+
+.features .feature-slide.is-exiting {
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: visible;
+}
+
+.features .rush-copy {
+    position: relative;
+    min-height: 180px;
+    padding-bottom: 25px;
+}
+
+.features .feature-slide .features-inner {
+    margin-top: 80px;
+}
+
+.features .rush-copy .text-slide {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 28px;
+    visibility: hidden;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 600ms ease-in-out, opacity 600ms ease-in-out;
+    will-change: transform, opacity;
+}
+
+.features .rush-copy .text-slide.is-active {
+    visibility: visible;
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+.features .rush-copy .text-slide.is-exiting {
+    visibility: visible;
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
 .features .rush-visual {
     position: relative;
     height: 400px;
+    overflow: hidden;
 }
 
-.features .rush-visual .swap-img {
+.features .rush-visual .visual-img {
     position: absolute;
     inset: 0;
     border-radius: 0.75rem;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    display: none;
 }
 
-.features .rush-visual .swap-img.is-active {
-    display: block;
-}
 
-.features .swap-dots {
+.features .rush-copy .swap-dots {
+    position: absolute;
+    bottom: 0;
+    left: 0;
     display: flex;
     gap: 0.5rem;
-    margin-top: 1rem;
 }
 
 .features .swap-dots button {
@@ -57,6 +121,23 @@
 
 .features .swap-dots button.is-active {
     background: var(--brand-primary);
+}
+
+/* Subtle fade-in for text on swap */
+.features .fade-in {
+    animation: kkFade 380ms ease;
+}
+
+@keyframes kkFade {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .features.home-section {

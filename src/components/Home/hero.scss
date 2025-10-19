@@ -1,4 +1,3 @@
-/* Hero */
 .hero {
     background: transparent;
     color: #ffffff;
@@ -31,9 +30,13 @@
 .hero-title {
     font-size: 5rem;
     line-height: 1.1;
+    margin-top: 80px;
     margin: 0 0 1.25rem 0;
     font-weight: 600;
     letter-spacing: 0.2px;
+    opacity: 0;
+    transform: translateY(24px);
+    animation: heroRise 700ms ease-out forwards;
 }
 
 .hero-actions {
@@ -68,4 +71,16 @@
 
 .hero.home-section {
     min-height: 100vh;
+}
+
+@keyframes heroRise {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

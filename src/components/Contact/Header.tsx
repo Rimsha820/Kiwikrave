@@ -28,7 +28,10 @@ export default function ContactHeader(): JSX.Element {
           <span className="kk-logo-mark" aria-label="KiwiKrave food logo">
             <i className="fa-solid fa-utensils" aria-hidden="true"></i>
           </span>
-          KiwiKrave
+          <span className="kk-logo-text">
+            <span className="kk-logo-word">KiwiKrave</span>
+            <span className="kk-logo-sub">Delivery</span>
+          </span>
         </a>
         <ul className="kk-nav-list">
           <li className={`kk-nav-item kk-dropdown${isLangOpen ? ' is-open' : ''}`} ref={langRef}>
