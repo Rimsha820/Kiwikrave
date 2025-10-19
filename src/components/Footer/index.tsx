@@ -9,7 +9,7 @@ export default function Footer(): JSX.Element {
       <div className="kk-footer__content">
         <div className="kk-footer__columns">
           <div className="kk-col">
-            <h4>{t('footer_review')}</h4>
+            <h4>{t('Kiwikrave Reviews')}</h4>
             <ul>
               <li><a href="#">{t('faq')}</a></li>
               <li><a href="#">{t('privacy_policy')}</a></li>

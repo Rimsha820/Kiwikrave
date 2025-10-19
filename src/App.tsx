@@ -12,7 +12,16 @@ import { useEffect } from 'react'
 type PageName = 'Home' | 'Merchant' | 'Courier' | 'Career' | 'Contact'
 
 function App() {
-  const [active, setActive] = useState<PageName>('Home')
+  const getPageFromHash = (): PageName => {
+    const hash = (window.location.hash || '').toLowerCase()
+    if (hash === '#merchant') return 'Merchant'
+    if (hash === '#courier') return 'Courier'
+    if (hash === '#career') return 'Career'
+    if (hash === '#contact') return 'Contact'
+    return 'Home'
+  }
+
+  const [active, setActive] = useState<PageName>(() => getPageFromHash())
   const [language, setLanguage] = useState<string>('en')
   const [country, setCountry] = useState<string>('us')
 
@@ -22,15 +31,6 @@ function App() {
   }, [])
 
   useEffect(() => {
-    const getPageFromHash = (): PageName => {
-      const hash = (window.location.hash || '').toLowerCase()
-      if (hash === '#merchant') return 'Merchant'
-      if (hash === '#courier') return 'Courier'
-      if (hash === '#career') return 'Career'
-      if (hash === '#contact') return 'Contact'
-      return 'Home'
-    }
-    setActive(getPageFromHash())
     const onHashChange = () => setActive(getPageFromHash())
     window.addEventListener('hashchange', onHashChange)
     return () => window.removeEventListener('hashchange', onHashChange)

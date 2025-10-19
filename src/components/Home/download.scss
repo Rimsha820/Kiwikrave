@@ -1,7 +1,4 @@
-.download {
-    background: #ffffff;
-    height: 700px;
-}
+.download { background: #ffffff; }
 
 .download .two-col {
     display: grid;
@@ -11,13 +8,7 @@
     align-items: center;
 }
 
-.download .app-img {
-    display: block;
-    height: auto;
-    width: auto;
-    max-width: 1200px;
-    height: 700px;
-}
+.download .app-img { display: block; width: 100%; height: auto; max-width: 100%; }
 
 /* Entrance animations */
 .download .from-left {
@@ -75,6 +66,9 @@
     display: block;
 }
 
-.download.home-section {
-    min-height: 90vh;
+.download.home-section { min-height: 60vh; }
+
+@media (max-width: 900px) {
+    .download .two-col { grid-template-columns: 1fr; gap: 1rem; }
+    .download.home-section { min-height: auto; }
 }

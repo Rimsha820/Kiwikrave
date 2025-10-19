@@ -1,4 +1,6 @@
-.features { background: #ffffff; }
+.features {
+    background: #ffffff;
+}
 
 .features .section-inner {
     min-height: 0;
@@ -142,4 +144,27 @@
 
 .features.home-section {
     min-height: 70vh;
+}
+
+@media (max-width: 900px) {
+    .features .features-inner {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .features .rush-visual {
+        height: 300px;
+    }
+
+    .features .offer-title {
+        font-size: 32px;
+    }
+
+    .features .rush-copy .rush-text {
+        font-size: 18px;
+    }
+
+    .features.home-section {
+        min-height: auto;
+    }
 }

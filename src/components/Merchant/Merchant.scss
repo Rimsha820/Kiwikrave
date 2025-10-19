@@ -48,7 +48,9 @@
 }
 
 @media (max-width: 900px) {
-  .merchant-hero .container { margin-left: 1.25rem; }
+  .merchant-hero .container {
+    margin-left: 1.25rem;
+  }
 }
 
 .btn-pill {
@@ -80,6 +82,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
+}
+
+@media (max-width: 900px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .benefit-item {
@@ -118,6 +126,13 @@
   text-align: center;
 }
 
+@media (max-width: 900px) {
+  .stats-row {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
 .stat .num {
   font-weight: 800;
   font-size: 2.6rem;
@@ -135,9 +150,19 @@
 .testimonial-grid {
   display: grid;
   grid-template-columns: 3fr 2fr;
-  /* slightly wider image */
   gap: 1.5rem;
   align-items: center;
+}
+
+@media (max-width: 900px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .photo {
+    height: 260px;
+    margin-top: 1rem;
+  }
 }
 
 .quote p {
@@ -178,6 +203,13 @@
 
 .photo .qimg.is-active {
   display: block;
+}
+
+@media (max-width: 900px) {
+  .photo .qimg {
+    background-size: cover;
+    background-position: center;
+  }
 }
 
 .quote-dots {
@@ -221,6 +253,18 @@
   margin-top: 2.5rem;
 }
 
+@media (max-width: 900px) {
+  .steps-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .step {
   text-align: center;
 }
@@ -255,6 +299,12 @@
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: center;
+}
+
+@media (max-width: 900px) {
+  .invest-inner {
+    grid-template-columns: 1fr;
+  }
 }
 
 .invest-center {

@@ -10,7 +10,10 @@ html, body, #root {
   margin: 0;
   padding: 0;
   height: 100%;
+  overflow-x: hidden; /* prevent horizontal scroll caused by wide children */
 }
+
+*, *::before, *::after { box-sizing: border-box; }
 
 main {
   margin: 0;

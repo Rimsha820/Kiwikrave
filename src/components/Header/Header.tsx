@@ -28,6 +28,7 @@ type HeaderProps = {
 export default function Header({ onNavigate, active, language = 'en', country = 'us', onChangeLanguage, onChangeCountry }: HeaderProps): JSX.Element {
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [isCountryOpen, setIsCountryOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const langRef = useRef<HTMLLIElement | null>(null);
   const countryRef = useRef<HTMLLIElement | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -48,6 +49,13 @@ export default function Header({ onNavigate, active, language = 'en', country = 
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth > 900) setIsMenuOpen(false);
+    };
+    window.addEventListener('resize', onResize, { passive: true });
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
   return (
     <header className={`kk-header${isScrolled ? ' is-scrolled' : ''}`}>
       <nav className="kk-nav">
@@ -60,7 +68,19 @@ export default function Header({ onNavigate, active, language = 'en', country = 
             <span className="kk-logo-sub">Delivery</span>
           </span>
         </a>
-        <ul className="kk-nav-list">
+        <button
+          className="kk-burger"
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={isMenuOpen}
+          onClick={() => {
+            setIsMenuOpen(!isMenuOpen);
+            setIsLangOpen(false);
+            setIsCountryOpen(false);
+          }}
+        >
+          <i className={`fa-solid ${isMenuOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
+        </button>
+        <ul className={`kk-nav-list${isMenuOpen ? ' is-open' : ''}`}>
           {NAV_ITEMS.map((name) => (
             <li key={name} className={`kk-nav-item${active === name ? ' is-active' : ''}`}>
               <a href="#" onClick={(e) => { e.preventDefault(); onNavigate(name); }}>{name}</a>

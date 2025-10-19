@@ -52,3 +52,32 @@
 .advantages.home-section {
     min-height: 60vh;
 }
+
+@media (max-width: 900px) {
+    .advantages .adv-list {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+    }
+
+    .advantages .section-title {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 600px) {
+    .advantages .adv-list {
+        grid-template-columns: 1fr;
+    }
+
+    .advantages .adv-copy h3 {
+        font-size: 22px;
+    }
+
+    .advantages .adv-copy p {
+        font-size: 16px;
+    }
+
+    .advantages.home-section {
+        min-height: auto;
+    }
+}
